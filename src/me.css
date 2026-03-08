@@ -1,0 +1,162 @@
+/* src/pages/Me.css */
+
+
+/* ===== ABOUT ===== */
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 38px;
+    min-height: 100vh;
+}
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 55%;
+}
+
+.about-left h1 {
+    font-size: 48px;
+    font-weight: 700;
+    border: solid 1px black;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.meta {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-text {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.github-link {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: solid 1px black;
+    padding: 8px 16px;
+    width: fit-content;
+    font-size: 14px;
+}
+
+.about-right img {
+    max-width: 300px;
+    opacity: 0.8;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+    padding: 60px 38px;
+    border-top: solid 1px black;
+}
+
+.skills h2 {
+    font-size: 36px;
+    font-weight: 700;
+    border: solid 1px black;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.skill-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px 0;
+    border-bottom: solid 1px rgb(200, 200, 200);
+}
+
+.skill-name {
+    min-width: 140px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.skill-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgb(60, 60, 60);
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    padding: 60px 38px;
+    border-top: solid 1px black;
+}
+
+.contact h2 {
+    font-size: 48px;
+    font-weight: 700;
+    border: solid 1px black;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.contact-desc {
+    font-size: 15px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 15px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: solid 1px black;
+    padding: 8px 12px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 14px;
+    outline: none;
+    background: white;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    align-self: flex-end;
+    padding: 8px 24px;
+    background: white;
+    border: solid 1px black;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: black;
+    color: white;
+}

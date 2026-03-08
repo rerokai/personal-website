@@ -1,0 +1,38 @@
+.head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 38px;
+    padding-right: 38px;
+    height: 46px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: solid 1px black;
+
+    position: fixed;
+    width: 100%;
+}
+
+.header-butt {   
+    height: 44px;
+    width: 100px;
+    background-color: white;
+    border: solid 2px rgb(255, 255, 255);
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-butt:hover,
+.header-butt.active {
+    border-bottom: solid 2px rgb(82, 82, 82);
+    
+}
+
+.left-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
