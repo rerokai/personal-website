@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Header } from './header/Header'
 import { Routes, Route } from "react-router-dom"
-import { Me } from './Me'
+import { Me } from './me/Me'
+import { Projects} from './prj/Projects'
 
 
 
@@ -14,7 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Me />} />
-        <Route path="/projects" element={<div>Проекты</div>} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<div>Блог</div>} />
       </Routes>
     </>
