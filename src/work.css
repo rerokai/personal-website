@@ -1,0 +1,66 @@
+.work-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-top: 150px;
+    padding: 5px 200px;
+    margin-left: 300px;
+}
+
+.work-title-border {
+    position: absolute;
+    top: -40px;       /* смещение вниз */
+    left: 10px;      /* смещение вправо */
+    width: 100%;
+    height: 100%;
+    border: solid 1px rgb(0, 132, 255);
+    z-index: -1;   
+}
+
+.contact-left{
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 1.6;
+    padding-left: 40px;
+}
+
+.art{
+
+    padding-left: 180px;
+    padding-bottom: 20px;
+}
+
+.link-contact {
+    margin-top: 10px;
+    margin-left: 60px;
+    padding: 8px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    gap: 12px;
+    
+    background-color: white;
+    width: 20%;
+    font-size: 20px;
+}
+
+.icon-contact-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.ascii-art3{
+    font-family: monospace;
+    font-size: 8px;
+    line-height: 1.0;
+    white-space: pre;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
