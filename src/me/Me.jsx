@@ -4,7 +4,7 @@ import './work.css'
 
 export function Me() {
   return (
-    <div className="me-page">
+    <div className="me-page" style={{overflowX: 'hidden'}} >
 
       <section className="about">
         <div className="about-left">
