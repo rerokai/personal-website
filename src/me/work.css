@@ -64,3 +64,57 @@
     color: rgb(0, 0, 0);
     opacity: 1;
 }
+
+@media (max-width: 420px) {
+  .work-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 0px 20px;
+    margin-left: -5px;
+    }
+
+    .work-title svg {
+    width: 370px;
+    height: 70px;
+  }
+
+  .work-title svg text {
+    font-size: 32px !important;
+    y: 8;
+  }
+
+    .work-title-border {
+    position: absolute;
+    top: 0px;       /* смещение вниз */
+    left: 12px;      /* смещение вправо */
+    width: 80%;
+    height: 70%;
+    border: solid 1px rgb(0, 132, 255);
+    z-index: -1;   
+    }
+
+  .contact-left {
+    padding-left: 20px;
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .link-contact {
+    margin-left: 0;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .art {
+    padding-left: 0;
+    overflow: hidden;
+  }
+
+  .ascii-art3 {
+    padding-top: 30px;
+    font-size: 4px;
+    width: 90%;
+  }
+}

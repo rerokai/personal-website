@@ -1,5 +1,6 @@
 
 .about {
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,7 +83,6 @@
     gap:10px;
     font-size: 20px;
     font-weight: 200;
-    
 }
 
 .about-right img {
@@ -97,4 +97,104 @@
     white-space: pre;
     color: black;
     opacity: 1;
+}
+
+@media (max-width: 420px) {
+  .about {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    min-height: 0px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .about-left {
+    max-width: 60%;
+    padding-top: 20px;
+    z-index: 1; 
+  }
+
+  .about-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 0px 20px;
+    margin-left: -5px;
+    }
+
+    .about-title svg {
+    width: 160px;
+    height: 70px;
+  }
+
+  .about-title svg text {
+    font-size: 32px !important;
+    y: 8;
+  }
+
+    .about-title-border {
+    position: absolute;
+    top: 20px;       /* смещение вниз */
+    left: 12px;      /* смещение вправо */
+    width: 82%;
+    height: 80%;
+    border: solid 1px rgb(0, 132, 255);
+    z-index: -1;   
+    }
+
+  .meta {
+    padding-left: 0;
+    font-size: 14px;
+  }
+  
+  .metagroup{
+    margin-top: 40px;
+  }
+
+  .about-text {
+    padding-left: 0;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  .link {
+    margin-top: 100px;
+    margin-left: 0px;
+    padding: 8px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: solid 1px black;
+    background-color: white;
+    width: 100%;
+  }
+
+  .icon-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+  .about-right {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    z-index: -1;
+    overflow: hidden;
+    max-width: 100vw;
+  }
+
+  .ascii-art {
+    font-size: 5px;
+    width: 240px;
+    z-index: -1; 
+  }
 }

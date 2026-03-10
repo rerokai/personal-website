@@ -37,3 +37,18 @@
     align-items: center;
     gap: 20px;
 }
+
+@media (max-width: 420px) {
+  .head {
+    width: 100vw;
+    padding: 0px 10px;
+    font-size: 12px;
+    background-color: white !important;
+    z-index: 2;
+  }
+
+  .header-butt {   
+    font-size: 14px;
+}
+  
+}
