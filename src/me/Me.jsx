@@ -28,7 +28,7 @@ export function Me() {
           <div className='metagroup'>
             <p className="meta">NAME: Anastasia</p>
             <p className="meta">LOCATION: Russia</p>
-            <p className="meta">OCCUPATION: Dev-Ops engineer</p>
+            <p className="meta">OCCUPATION: Infrastructure engineer</p>
           </div>
           <p className="about-text">I’m a student getting into DevOps and infrastructure engineering.<br></br>
             Most of my time goes into lab projects with containers, automation, monitoring,<br></br> and Linux-based systems.<br></br>
