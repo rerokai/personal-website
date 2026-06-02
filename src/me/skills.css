@@ -51,6 +51,14 @@
 
 .highlight {
     color: rgb(0, 100, 220);
+    text-decoration: underline rgba(102, 171, 255, 0) 2px ;
+      transition: text-decoration-color 0.3s ease;
+}
+
+#prg:hover {
+    color: rgb(0, 100, 220);
+    text-decoration: underline rgba(102, 171, 255, 1) 2px;
+    cursor:default;
 }
 
 @media (max-width: 420px) {

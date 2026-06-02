@@ -16,26 +16,28 @@
 
 .header-butt {   
     height: 44px;
-    width: 100px;
+    width: 180px;
     background-color: white;
     border: solid 2px rgb(255, 255, 255);
     font-size: 17px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    transition: border 0.3s ease;
 }
 
 .header-butt:hover,
 .header-butt.active {
-    border-bottom: solid 2px rgb(82, 82, 82);
-    
+    border-left: solid 1px rgb(0, 0, 0);
+    border-right: solid 1px rgb(0, 0, 0);
 }
 
 .left-section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 0px;
 }
 
 @media (max-width: 420px) {

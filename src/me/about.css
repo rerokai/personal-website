@@ -71,6 +71,8 @@
     background-color: white;
     width: 50%;
     font-size: 14px;
+    
+    transition: background-color 0.2s ease;
 }
 
 .link:hover{

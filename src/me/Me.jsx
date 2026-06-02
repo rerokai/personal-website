@@ -1,6 +1,7 @@
 import './about.css'
 import './skills.css'
 import './work.css'
+import { Link } from 'react-router-dom';
 
 export function Me() {
   return (
@@ -179,7 +180,7 @@ export function Me() {
                 Monitoring/
             </div>
             <div className='skill-text'>
-                First encountered <span className="highlight">Prometheus and Grafana</span> while learning about system monitoring. I enjoyed working with these tools so much that I built a mobile application as a course project that monitors infrastructure using Prometheus metrics.
+                First encountered <Link to="/stats" className="highlight" id='prg'> Prometheus and Grafana</Link> while learning about system monitoring. I enjoyed working with these tools so much that I built a mobile application as a course project that monitors infrastructure using Prometheus metrics.
             </div>
         </div>
         <div className='skills-content'>
