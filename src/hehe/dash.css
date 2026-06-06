@@ -10,33 +10,124 @@
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 2px;
+    grid-column-gap: 0px;
     grid-row-gap: 2px;
     width: 100vw;
     height: 100vh;
-    
+    overflow: hidden;
 }
 
-.vine { grid-area: 1 / 1 / 7 / 2; }
-.metrics { grid-area: 1 / 2 / 7 / 5; }
-.minecraft-name { grid-area: 1 / 5 / 2 / 10; }
-.minecraft-version { grid-area: 1 / 10 / 2 / 12; }
-.tree-area { grid-area: 2 / 6 / 7 / 12; }
-.bee-space{ grid-area: 2 / 5 / 6 / 6; }
-.grace{ grid-area: 6 / 5 / 7 / 6;}
+.vine { grid-area:  1 / 1 / 7 / 2; }
+.metrics { grid-area:  1 / 2 / 7 / 6; }
 
+.minecraft-name { grid-area: 1 / 5 / 2 / 10;
+    padding-top: 14px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: row;
+    gap:10px
+}
+
+.minecraft-version { grid-area: 1 / 10 / 2 / 12; }
+.tree-area { grid-area:  1 / 7 / 7 / 12; }
+.bee-space{ grid-area:  1 / 6 / 7 / 7; 
+display: flex; flex-direction: column; justify-content: space-between ;}
+
+
+.vine-asc {
+    padding-left: 10px;
+    font-family: monospace;
+    font-size: 3px;
+    line-height: 1.2;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
+
+.stars-asc{
+    font-family: monospace;
+    font-size: 5px;
+    line-height: 1.2;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
+
+.stars-ascii{
+    display: block;
+    
+    font-family: monospace;
+    padding-top: 0px;
+    font-size: 3px;
+    width: 40px;
+    height: 40px;
+    line-height: 1.0;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
+
+
+.version-ascii{
+    font-family: monospace;
+    font-size: 4.5px;
+    line-height: 1.1;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
+
+.tree-ascii{
+    padding-left: 120px;
+    padding-top: 50px;
+    font-family: monospace;
+    font-size: 8.9px;
+    line-height: 1.05;
+    white-space: pre;
+    color: black;
+    opacity: 0.8;
+}
+
+
+.bee-ascii{
+    display: block;
+    padding-top: 180px;
+    font-family: monospace;
+    font-size: 3px;
+    line-height: 1.0;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
 
 .foreground-layer {
     position: absolute;
     z-index: 2;
-    top: 0px;
-    left: 50px;
-    background-color: aqua;
-    height: 800px;
+
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
+.dashboard-metric{
+     grid-area: 1 / 1 / 7 / 6;
+     
+}
 
+.dashboard-stats{
+     grid-area: 1 / 6 / 7 / 12;
+     
+}
 
-
+.header-stats{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    gap:80px
+}
 
 
