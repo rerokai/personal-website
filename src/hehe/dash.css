@@ -21,11 +21,12 @@
 .metrics { grid-area:  1 / 2 / 7 / 6; }
 
 .minecraft-name { grid-area: 1 / 5 / 2 / 10;
-    padding-top: 14px;
-    padding-left: 50px;
+    padding-top: 16px;
+    padding-left: 0px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: row;
-    gap:10px
+    gap:14px
 }
 
 .minecraft-version { grid-area: 1 / 10 / 2 / 12; }
@@ -46,7 +47,7 @@ display: flex; flex-direction: column; justify-content: space-between ;}
 
 .stars-asc{
     font-family: monospace;
-    font-size: 5px;
+    font-size: 4px;
     line-height: 1.2;
     white-space: pre;
     color: black;
@@ -57,7 +58,7 @@ display: flex; flex-direction: column; justify-content: space-between ;}
     display: block;
     
     font-family: monospace;
-    padding-top: 0px;
+    padding-top: 10px;
     font-size: 3px;
     width: 40px;
     height: 40px;
@@ -67,6 +68,20 @@ display: flex; flex-direction: column; justify-content: space-between ;}
     opacity: 1;
 }
 
+.stars-ascii-2{
+    display: block;
+    
+    font-family: monospace;
+    padding-top: 30px;
+
+    font-size: 4px;
+    width: 40px;
+    height: 40px;
+    line-height: 1.0;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
 
 .version-ascii{
     font-family: monospace;
@@ -79,13 +94,14 @@ display: flex; flex-direction: column; justify-content: space-between ;}
 
 .tree-ascii{
     padding-left: 120px;
-    padding-top: 50px;
+    padding-top: 0px;
     font-family: monospace;
-    font-size: 8.9px;
-    line-height: 1.05;
+    font-size: 9.5px;
+    line-height: 1.1;
     white-space: pre;
     color: black;
     opacity: 0.8;
+    margin-top: -70px
 }
 
 
@@ -95,6 +111,21 @@ display: flex; flex-direction: column; justify-content: space-between ;}
     font-family: monospace;
     font-size: 3px;
     line-height: 1.0;
+    white-space: pre;
+    color: black;
+    opacity: 1;
+}
+
+.flower-asc{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.flower-ascii{
+    font-family: monospace;
+    font-size: 4px;
+    line-height: 1.2;
     white-space: pre;
     color: black;
     opacity: 1;
@@ -119,7 +150,7 @@ display: flex; flex-direction: column; justify-content: space-between ;}
 }
 
 .dashboard-stats{
-     grid-area: 1 / 6 / 7 / 12;
+     grid-area: 1 / 6 / 7 / 10;
      
 }
 
@@ -127,7 +158,15 @@ display: flex; flex-direction: column; justify-content: space-between ;}
     display: flex;
     flex-direction: row;
     background-color: white;
-    gap:80px
+    gap:30px;
 }
 
+.dashboard-metric{
+    width: 611px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 130px;
+    gap:-10px
 
+}
