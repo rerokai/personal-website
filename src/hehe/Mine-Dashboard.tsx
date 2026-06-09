@@ -10,7 +10,7 @@ import PixelRamChart from "./PixelRamChart"
 import PixelDiskChart from "./PixelDiskChart"
 
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "";
 
 interface MinecraftStats {
   players_online: number;
