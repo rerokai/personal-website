@@ -16,7 +16,7 @@
 
 .header-butt {   
     height: 44px;
-    width: 180px;
+    padding: 0px 30px;
     background-color: white;
     border: solid 2px rgb(255, 255, 255);
     font-size: 17px;

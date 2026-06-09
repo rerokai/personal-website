@@ -28,13 +28,13 @@ const VineGrower = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setChunksCount((prevCount) => {
-        if (prevCount >= 10) {
+        if (prevCount >= 20) {
           clearInterval(interval); 
           return prevCount;
         }
         return prevCount + 1;
       });
-    }, 30000); // 30 секунд
+    }, 10000); // 30 секунд
 
     return () => clearInterval(interval);
   }, []);

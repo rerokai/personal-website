@@ -151,7 +151,9 @@ display: flex; flex-direction: column; justify-content: space-between ;}
 
 .dashboard-stats{
      grid-area: 1 / 6 / 7 / 10;
-     
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
 }
 
 .header-stats{
@@ -168,5 +170,284 @@ display: flex; flex-direction: column; justify-content: space-between ;}
     flex-direction: column;
     padding-left: 130px;
     gap:-10px
+
+}
+
+.minecraft-stats{
+    margin-bottom: 140px;
+    margin-left: 130px;
+    display: flex;
+    flex-direction:column;
+    gap:14px
+}
+
+.stat-butt{
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: row;
+    width: 567px;
+    justify-content: space-between;
+    align-items: end;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+}
+
+.stat-butt:hover{
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    background-color: rgb(247, 247, 247);
+}
+
+.stat {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+   
+}
+
+.stat-title{
+    font-family: 'Micro 5', monospace;
+    font-size: 30px;
+}
+
+.stat-num{
+    font-family: 'Jersey 10', monospace;
+    font-size: 36px;
+    color: rgb(0, 132, 255);
+}
+
+.mine-metrics{
+    display: flex;
+    flex-direction: row;
+    gap:14px;
+    justify-content: space-around;
+}
+
+@media (max-width: 1600px) {
+
+  .foreground-layer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;     
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem;
+    overflow-y: auto;         /* скролл, если не влезает */
+    box-sizing: border-box;
+ 
+    grid-template-columns: none;
+    grid-template-rows: none;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+
+  .dashboard-stats {
+    order: 1;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+
+  .dashboard-metric {
+    order: 2;
+    width: 100%;
+    max-width: 700px;
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+
+  .minecraft-name {
+    grid-area: auto !important;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    width: 100%;
+    padding: 0;
+  }
+
+
+  .minecraft-stats {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .stat-butt {
+    width: 100%;
+    max-width: 567px;
+    box-sizing: border-box;
+  }
+
+  .mine-metrics {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .background-layer {
+    pointer-events: none;   
+  }
+  .foreground-layer {
+    pointer-events: auto;
+    background: transparent;
+  }
+
+  .stars-ascii, .stars-ascii-2, .mine-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .tree-area {
+    display: none !important;
+  }
+
+  .flower-asc {
+    display: none !important;
+  }
+
+  .bee-space {
+    position: relative;
+    top: 170px;     
+    right: 120px;
+  }
+
+  .bee-ascii {
+    padding-top: 0 !important; 
+  }
+
+  .metrics {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .vine,
+  .bee-space {
+    display: none !important;
+  }
+
+  .mine-title {
+    width: auto;
+    max-width: 90vw;    
+    overflow: visible;
+  }
+
+  .mine-title svg {
+    width: 270px !important;   
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .mine-title text {
+    font-size: 60px !important;  
+  }
+
+  .minecraft-name {
+    overflow: visible;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+
+  }
+
+  .stars-ascii, .stars-ascii-2 {
+    font-size: 2px !important;
+    line-height: 1;
+    transform: scale(0.8); 
+  }
+
+  .stars-ascii pre, .stars-ascii-2 pre {
+    font-size: 4px;
+  }
+
+  .dashboard-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .dashboard-metric > div {
+    transform: scale(0.8);
+    transform-origin: top center;
+    margin-bottom: -20px; 
+    margin-top: -10px;
+  }
+
+  .stat-butt {
+    width: 100% !important;
+    max-width: 400px;
+  }
+
+  .stat-title {
+    font-size: 24px;
+  }
+  .stat-num {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+    .dashboard-metric > div {
+    transform: scale(0.6);
+    transform-origin: top center;
+    margin-bottom: -100px; 
+    margin-top: -20px;
+  }
+
+    .stars-ascii {
+    font-size: 2px !important;
+    line-height: 1;
+    transform: scale(0.8); 
+  }
+
+
+  .stars-ascii-2 {
+    display: none !important;
+  }
+
+  .mine-title svg {
+    width: 220px !important;   
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+  .mine-title text {
+    font-size: 44px !important;  
+  }
+
+   .minecraft-name {
+    padding-bottom: 0px;
+
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .stars-ascii, .stars-ascii-2 {
+    display: none !important;
+  }
+
+    .stat-butt {
+    width: 100% !important;
+    max-width: 300px;}
 
 }

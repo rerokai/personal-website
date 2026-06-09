@@ -1,4 +1,5 @@
 import "./dash.css"
+import { useState, useEffect } from "react";
 import BeeAnimation from "./BeeAnimation"
 import { beeFrames } from "./beeFrames"
 import { starFrames } from "./starFrames"
@@ -8,7 +9,60 @@ import PixelCpuChart from "./PixelCpuChart"
 import PixelRamChart from "./PixelRamChart"
 import PixelDiskChart from "./PixelDiskChart"
 
+
+const API_BASE = "http://127.0.0.1:8000";
+
+interface MinecraftStats {
+  players_online: number;
+  loaded_chunks: number;
+  entities: number;
+  world_size_gb: number;
+  tps: number;
+}
+
+
 export function MineDashboard(){
+
+    const [stats, setStats] = useState<MinecraftStats>({
+    players_online: 0,
+    loaded_chunks: 0,
+    entities: 0,
+    world_size_gb: 0,
+    tps: 0,
+  });
+  const [loading, setLoading] = useState(true);
+  const fetchMinecraftStats = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/api/minecraft/metrics`);
+      if (!res.ok) throw new Error("Failed to fetch");
+      const data = await res.json();
+      setStats({
+        players_online: data.players_online ?? 0,
+        loaded_chunks: data.loaded_chunks ?? 0,
+        entities: data.entities ?? 0,
+        world_size_gb: data.world_size_gb ?? 0,
+        tps: data.tps ?? 0,
+      });
+      setLoading(false);
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchMinecraftStats();
+    const interval = setInterval(fetchMinecraftStats, 15000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatNumber = (num: number) => {
+    if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + "M";
+    if (num >= 1_000) return (num / 1_000).toFixed(1) + "K";
+    return num.toString();
+  };
+
+
     return(
         <div className="minecraft-content">
             <div className="background-layer">
@@ -209,7 +263,88 @@ export function MineDashboard(){
                         <StarAnimation frames={starFrames} fps={18} pingpong={false} />  
                     </div>
                 </div>
-                
+                </div>
+                <div className="minecraft-stats">
+                    <button className="stat-butt">
+                        <div className="stat">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1219_1352)">
+                        <rect x="10.2969" width="8.4807" height="2.8269" fill="black"/>
+                        <rect x="10.2969" y="11.3076" width="8.4807" height="2.8269" fill="black"/>
+                        <rect x="18.7793" y="2.82715" width="2.8269" height="8.4807" fill="black"/>
+                        <rect x="7.4707" y="2.82715" width="2.8269" height="8.4807" fill="black"/>
+                        <rect x="3.23047" y="22.6152" width="2.8269" height="5.6538" fill="black"/>
+                        <rect x="23.0195" y="22.6152" width="2.8269" height="5.6538" fill="black"/>
+                        <rect x="8.88477" y="16.9619" width="11.3076" height="2.8269" fill="black"/>
+                        <rect x="6.05664" y="19.7891" width="2.8269" height="2.8269" fill="black"/>
+                        <rect x="20.1914" y="19.7891" width="2.8269" height="2.8269" fill="black"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1219_1352">
+                        <rect width="28" height="28" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <div className="stat-title">online</div>
+                        </div>
+                        <div className="stat-num">{!loading ? stats.players_online : "..."}</div>
+                    </button>
+                    <button className="stat-butt">
+                        <div className="stat">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1219_1371)">
+                        <rect x="16.8008" y="2.7998" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="11.1992" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="5.59961" y="8.39941" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="5.59961" y="22.3994" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="11.1992" y="11.1992" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="11.1992" y="25.2002" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="16.8008" y="8.39941" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="16.8008" y="22.3994" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="5.59961" y="2.7998" width="5.59963" height="2.80007" fill="black"/>
+                        <rect y="5.59863" width="5.59963" height="2.80007" fill="black"/>
+                        <rect y="19.6006" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="22.4004" y="5.59863" width="5.59963" height="2.80007" fill="black"/>
+                        <rect x="22.4004" y="19.6006" width="5.59963" height="2.80007" fill="black"/>
+                        <rect y="5.59863" width="2.79981" height="16.8004" fill="black"/>
+                        <rect x="25.1992" y="5.59863" width="2.79981" height="16.8004" fill="black"/>
+                        <rect x="14" y="14.001" width="2.79981" height="11.2003" fill="black"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1219_1371">
+                        <rect width="28" height="28" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <div className="stat-title">chunks</div>
+                        </div>
+                        <div className="stat-num">{!loading ? formatNumber(stats.loaded_chunks) : "..."}</div>
+                    </button>
+                    <button className="stat-butt">
+                        <div className="stat">
+                        <svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8.35393" y="6.73479" width="4.01639" height="4.22619" fill="black" stroke="black" stroke-width="0.469577"/>
+                        <rect x="17.3246" y="6.73479" width="4.01639" height="4.22619" fill="black" stroke="black" stroke-width="0.469577"/>
+                        <path d="M16.8555 11.6641V13.7773H19.0986V20.3516H17.3252V18.0039H12.3701V20.3516H10.8203V13.7773H12.8398V11.6641H16.8555Z" fill="black" stroke="black" stroke-width="0.469577"/>
+                        <path d="M1.5 8V1.5H7.64545" stroke="black" stroke-width="3"/>
+                        <path d="M27.5 8V1.5H21.3545" stroke="black" stroke-width="3"/>
+                        <path d="M1.5 18.5V25H7.64545" stroke="black" stroke-width="3"/>
+                        <path d="M27.5 18.5V25H21.3545" stroke="black" stroke-width="3"/>
+                        </svg>
+                        <div className="stat-title">entities</div>
+                        </div>
+                        <div className="stat-num">{!loading ? formatNumber(stats.entities) : "..."}</div>
+                    </button>
+                    <div className="mine-metrics">
+                        <button className="stat-butt">
+                        <div className="stat-num">{!loading ? `${stats.world_size_gb.toFixed(1)} GB` : "..."}</div>
+                        <div className="stat-title">size</div>
+                        </button>
+                        <button className="stat-butt">
+                        <div className="stat-num">{!loading ? stats.tps.toFixed(1) : "..."}</div>
+                        <div className="stat-title">tps</div>
+                        </button>
+                    </div>
                 </div>
                 </div>
             </div>

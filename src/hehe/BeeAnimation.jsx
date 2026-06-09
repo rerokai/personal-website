@@ -31,7 +31,7 @@ const BeeAnimation = ({ frames, fps = 18, pingpong = true }) => {
 
       setTimeout(() => {
         setShowText(false);
-      }, 3000);
+      }, 1000);
 
     }, 15000); 
 

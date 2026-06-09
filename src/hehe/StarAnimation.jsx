@@ -45,11 +45,9 @@ const StarAnimation = ({ frames, fps = 24, pingpong = false }) => {
     return [...forward, ...backward];
   }, [normalizedFrames, pingpong]);
 
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentFrame((prev) => {
-
         if (!isHoveredRef.current && !isAutoPlayingRef.current && prev === 0) {
           return 0;
         }
@@ -72,15 +70,27 @@ const StarAnimation = ({ frames, fps = 24, pingpong = false }) => {
     return () => clearInterval(interval);
   }, [smoothFrames, fps]);
 
+  // ИСПРАВЛЕНО: Рекурсивный таймер со случайным интервалом ожидания
   useEffect(() => {
-    const autoPlayTimer = setInterval(() => {
+    let timeoutId;
 
-      if (!isHoveredRef.current) {
-        setIsAutoPlaying(true);
-      }
-    }, 10000); // 10 секунд
+    const startTimeout = () => {
+      // Генерируем случайное время от 7000 до 17000 миллисекунд (7-17 секунд)
+      const randomDelay = Math.floor(Math.random() * 10000) + 7000;
 
-    return () => clearInterval(autoPlayTimer);
+      timeoutId = setTimeout(() => {
+        // Запускаем мерцание только если на звезду сейчас не наведена мышка
+        if (!isHoveredRef.current) {
+          setIsAutoPlaying(true);
+        }
+        // Рекурсивно планируем следующее случайное мерцание
+        startTimeout();
+      }, randomDelay);
+    };
+
+    startTimeout(); // Первый запуск
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (!smoothFrames.length) return null;
