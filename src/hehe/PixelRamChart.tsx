@@ -153,7 +153,7 @@ const PixelRamChart: React.FC = () => {
         </svg>
 
         <div style={{ position: 'absolute', top: '-15px', left: 'calc((611px - 150px) / 2)', width: '150px', fontFamily: '"Jersey 10", monospace', fontSize: '32px', color: 'rgb(0, 132, 255)', backgroundColor: '#fff', textAlign: 'center', zIndex: 10 }}>
-          RAM {currentRamPercent}%
+          RAM
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '30px', width: '486px' }}>
