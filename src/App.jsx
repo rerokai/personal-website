@@ -5,8 +5,6 @@ import { Header } from './header/Header'
 import { Routes, Route } from "react-router-dom"
 import { Me } from './me/Me'
 import { Projects} from './prj/Projects'
-import { Dashboard } from './hehe/Dashboard'
-import { MineDashboard } from './hehe/Mine-Dashboard';
 import { NotFound } from './NotFound'
 
 
@@ -21,8 +19,6 @@ function App() {
         <Route path="/" element={<Me />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/minecraft-dashboard" element={<MineDashboard/>}/>
-        <Route path="/hosting-dashboard" element={<Dashboard/>}/>
       </Routes>
     </>
   )

@@ -1,7 +1,5 @@
-
-
 export function NotFound(){
  return(
-    <h3>уууууууу  сука проебали</h3>
+    <h3>уууууу   вам не сюда.</h3>
  )
 }
