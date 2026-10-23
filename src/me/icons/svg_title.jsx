@@ -1,4 +1,4 @@
-export default function SvgTitle({ children, width = 400 }) {
+export default function SvgTitle({ children, width = 400, fontSize = 85 }) {
   return (
     <svg
       width={width}
@@ -10,7 +10,7 @@ export default function SvgTitle({ children, width = 400 }) {
       <text
         x="10"
         y="75"
-        fontSize="85"
+        fontSize={fontSize}
         fontFamily="Bai Jamjuree"
         fontWeight="600"
         fill="black"
