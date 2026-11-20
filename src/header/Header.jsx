@@ -13,7 +13,6 @@ export function Header() {
         </div>
         <div className="right-section">
             
-            <NavLink to="/minecraft-dashboard" className="header-butt">Minecraft?</NavLink>
             
         </div>
     </div>

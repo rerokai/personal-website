@@ -9,9 +9,9 @@
 
 .work-title-border {
     position: absolute;
-    top: -40px;       /* смещение вниз */
+    top: -20px;       /* смещение вниз */
     left: 10px;      /* смещение вправо */
-    width: 100%;
+    width: 130%;
     height: 100%;
     border: solid 1px rgb(0, 132, 255);
     z-index: -1;   
@@ -33,18 +33,25 @@
 }
 
 .link-contact {
-    margin-top: 10px;
-    margin-left: 60px;
+    margin-top: 12px;
+    margin-left: 20px;
     padding: 8px 20px;
 
     display: flex;
     align-items: center;
     justify-content:start;
-    gap: 12px;
+    gap: 10px;
     
     background-color: white;
     width: 20%;
     font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.link-contact:hover{
+ 
+  color: rgb(0, 132, 255);
+
 }
 
 .icon-contact-link{
