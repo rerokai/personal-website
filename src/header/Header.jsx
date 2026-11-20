@@ -8,7 +8,7 @@ export function Header() {
         <div className="left-section">
             
             <NavLink to="/" end className="header-butt">Me</NavLink>
-            <NavLink to="/projects" className="header-butt">Projects</NavLink>
+            {/* <NavLink to="/projects" className="header-butt">Projects</NavLink> */}
             
         </div>
         <div className="right-section">
